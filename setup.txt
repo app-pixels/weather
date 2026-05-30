@@ -1,0 +1,21 @@
+# Weather Dashboard — copy to SD card as /setup/setup.txt
+
+# Display brightness 0-255
+BRIGHTNESS = 200
+
+# Auto-off timeout in seconds (0 = disabled)
+TIMEOUT = 300
+
+# WiFi (up to 3 networks with fallback)
+SSID      = "your_wifi"
+PASSWORD  = "your_password"
+SSID2     = ""
+PASSWORD2 = ""
+SSID3     = ""
+PASSWORD3 = ""
+
+# City name for open-meteo geocoding API (English name)
+LOCATION = "Vienna"
+
+# Weather refresh interval in minutes (default: 10)
+WEATHER_REFRESH_MIN = 10

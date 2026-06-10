@@ -1,3 +1,5 @@
+> Part of [**app-pixels.com**](https://www.app-pixels.com) — browse + flash this app at [`/apps/weather`](https://www.app-pixels.com/apps/weather).
+
 # weather
 
 **Weather** · v1.0.0

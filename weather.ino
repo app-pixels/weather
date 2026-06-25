@@ -21,6 +21,7 @@
 #include "HWCDC.h"
 #include "XPowersLib.h"
 #include "app_common.h"
+#include "hw_panel.h"
 #include "app_20_weather.h"
 
 
@@ -28,8 +29,7 @@
 Arduino_DataBus *bus = new Arduino_ESP32QSPI(
   LCD_CS, LCD_SCLK, LCD_SDIO0, LCD_SDIO1, LCD_SDIO2, LCD_SDIO3);
 
-Arduino_SH8601 *gfx = new Arduino_SH8601(
-  bus, GFX_NOT_DEFINED, 0, LCD_WIDTH, LCD_HEIGHT);
+Arduino_OLED *gfx = nullptr;
 
 // Shared canvas — allocated once so spi_bus_initialize() runs once.
 Arduino_Canvas *g_canvas = nullptr;
@@ -80,6 +80,7 @@ void setup() {
     SD_MMC.end();   // app_20 re-mounts to read full config (SSID, LOCATION, etc.)
   }
 
+  gfx = make_display(bus);
   g_canvas = new Arduino_Canvas(LCD_WIDTH, LCD_HEIGHT, gfx, 0, 0, 1);
   if (!g_canvas->begin()) USBSerial.println("g_canvas->begin() failed");
   gfx->setBrightness(g_config.brightness);

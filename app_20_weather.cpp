@@ -707,7 +707,7 @@ static void drawDashboard() {
 }
 
 // ── App entry points ──────────────────────────────────────────────────────────
-void app20_setup(Arduino_SH8601 * /*passed_gfx*/) {
+void app20_setup(Arduino_OLED * /*passed_gfx*/) {
     if (!expander.begin(0x20)) USBSerial.println("XCA9554 init failed");
     expander.pinMode(1, OUTPUT); expander.digitalWrite(1, LOW);
     expander.pinMode(2, OUTPUT); expander.digitalWrite(2, LOW);
